@@ -1,4 +1,5 @@
 import express from "express";
+import { UserController } from "./controller/userController.js";
 
 const router = express.Router();
 router.get("/health", (req, res) => {
@@ -8,5 +9,7 @@ router.get("/health", (req, res) => {
       console.log(error);
    }
 });
+router.get("/users",UserController.getAll)
+router.post("/users",UserController.create)
 
 export default router;
