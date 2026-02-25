@@ -1,5 +1,6 @@
 import express from "express";
 import { UserController } from "./controller/userController.js";
+import { postController } from "./controller/postContoller.js";
 
 const router = express.Router();
 router.get("/health", (req, res) => {
@@ -12,5 +13,9 @@ router.get("/health", (req, res) => {
 router.get("/users", UserController.getAll)
 
 router.post("/users", UserController.create)
+
+router.get("/posts", postController.getAll)
+
+router.get("/posts/:id", postController.getById)
 
 export default router;

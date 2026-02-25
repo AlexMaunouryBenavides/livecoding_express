@@ -1,4 +1,4 @@
-import type User from "../../interface/User.js";
+import type User from "../../interface/User.ts";
 import { db } from "../../config/db.js";
 import type { ResultSetHeader } from "mysql2";
 
