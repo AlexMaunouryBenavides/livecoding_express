@@ -1,3 +1,4 @@
-node_modules
-
-.env
+# Racine repo
+backend/node_modules/
+backend/.env
+backend/dist/
