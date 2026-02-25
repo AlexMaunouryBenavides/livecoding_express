@@ -9,7 +9,8 @@ router.get("/health", (req, res) => {
       console.log(error);
    }
 });
-router.get("/users",UserController.getAll)
-router.post("/users",UserController.create)
+router.get("/users", UserController.getAll)
+
+router.post("/users", UserController.create)
 
 export default router;

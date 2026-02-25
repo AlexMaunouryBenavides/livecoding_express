@@ -9,12 +9,18 @@ export class UserModel {
 
     return rows as User[];
   }
+  
+  static async findByEmail(email: string): Promise<User[]> {
+
+    const [user] = await db.query("SELECT * FROM user WHERE email = ? ", [email]);
+    return user as User[];
+  }
+
   static async create({ name, email }: User): Promise<number> {
 
     const [result] = await db.query<ResultSetHeader>("INSERT INTO user(name,email) VALUES(?,?)", [
       name, email
     ]);
-    console.log(result)
     return result.insertId;
 
   }
